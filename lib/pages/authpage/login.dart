@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/functions/constant/appColors.dart';
 import 'package:health_app/functions/constant/screenSize.dart';
-import 'package:health_app/home/home.dart';
+import 'package:health_app/pages/home/home.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -12,6 +12,7 @@ class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  int _selectedrole=3;
 
   bool obsecure = true; // start with hidden password
 
@@ -136,7 +137,7 @@ class _LoginState extends State<Login> {
                 if (_formKey.currentState!.validate()) {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => homepage()),
+                    MaterialPageRoute(builder: (context) => Homepage(role: _selectedrole)),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Logging in...')),
@@ -170,33 +171,35 @@ class _LoginState extends State<Login> {
 
   /// Welcome / branding section
   Widget _welcomePage() {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      color: Colors.white.withOpacity(0.9),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Icon(Icons.health_and_safety, size: 100, color: Colors.teal),
-          SizedBox(height: 20),
-          Text(
-            "Welcome to Afya Yangu",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
+    return SingleChildScrollView(
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        color: Colors.white.withOpacity(0.9),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Icon(Icons.health_and_safety, size: 100, color: Colors.teal),
+            SizedBox(height: 20),
+            Text(
+              "Welcome to Afya Yangu",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
             ),
-          ),
-          SizedBox(height: 10),
-          Text(
-            "Your health, your control.\nSign in to continue.",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.black54,
-              fontSize: 16,
+            SizedBox(height: 10),
+            Text(
+              "Your health, your control.\nSign in to continue.",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black54,
+                fontSize: 16,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

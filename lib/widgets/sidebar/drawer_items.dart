@@ -1,31 +1,38 @@
 import 'drawer_item.dart';
 import 'package:flutter/material.dart';
 
-final teacherItems = [
-  DrawerItem(title: 'Dashboard', icon: Icons.dashboard),
-  DrawerItem(title: 'Students', icon: Icons.school),
-  DrawerItem(title: 'Attendance', icon: Icons.check_circle),
-  DrawerItem(title: 'Exams & Grades', icon: Icons.assignment_turned_in),
+/// Doctor’s Drawer Items
+final doctorItems = [
+
+  DrawerItem(title: 'Patients', icon: Icons.people),
+  DrawerItem(title: 'Appointments', icon: Icons.calendar_today),
+  DrawerItem(title: 'Prescriptions', icon: Icons.medical_services),
+  DrawerItem(title: 'Lab Results', icon: Icons.biotech),
 ];
 
-final studentItems = [
-  DrawerItem(title: 'Dashboard', icon: Icons.dashboard),
-  DrawerItem(title: 'Classes & Timetable', icon: Icons.schedule),
-  DrawerItem(title: 'Exams & Grades', icon: Icons.assignment_turned_in),
-  DrawerItem(title: 'Fees & Payments', icon: Icons.attach_money),
+/// Patient’s Drawer Items
+final patientItems = [
+
+  DrawerItem(title: 'My Appointments', icon: Icons.event_note),
+  DrawerItem(title: 'Prescriptions', icon: Icons.receipt_long),
+  DrawerItem(title: 'Lab Reports', icon: Icons.biotech),
+  DrawerItem(title: 'Payments', icon: Icons.attach_money),
 ];
 
+/// Admin / Director (Hospital Director)
 final directorItems = [
-  DrawerItem(title: 'Dashboard', icon: Icons.dashboard),
-  DrawerItem(title: 'Students', icon: Icons.school),
-  DrawerItem(title: 'Teachers', icon: Icons.person),
-  DrawerItem(title: 'Classes & Timetable', icon: Icons.schedule),
-  DrawerItem(title: 'Exams & Grades', icon: Icons.assignment_turned_in),
-  DrawerItem(title: 'Attendance', icon: Icons.check_circle),
-  DrawerItem(title: 'Fees & Payment', icon: Icons.attach_money),
+  DrawerItem(title: 'Doctors', icon: Icons.person),
+  DrawerItem(title: 'Patients', icon: Icons.people),
+  DrawerItem(title: 'Appointments', icon: Icons.schedule),
+  DrawerItem(title: 'Billing & Payments', icon: Icons.attach_money),
+  DrawerItem(title: 'Inventory & Pharmacy', icon: Icons.local_hospital),
+  DrawerItem(title: 'Reports', icon: Icons.insert_chart),
 ];
 
+/// Common items (bottom of drawer)
 final itemsSecond = [
   DrawerItem(title: 'Account', icon: Icons.account_circle),
   DrawerItem(title: 'Settings', icon: Icons.settings),
+  DrawerItem(title: 'Help & Support', icon: Icons.help_outline),
 ];
+

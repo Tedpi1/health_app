@@ -13,15 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         children: [
           SizedBox(width: 8),
-          // ClipOval(
-          //   child: Image.asset(
-          //     'assets/1.jpg',
-          //     height: 35,
-          //     width: 35,
-          //     fit: BoxFit.cover,
-          //   ),
-          // ),
-          // SizedBox(width: 10),
+
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),

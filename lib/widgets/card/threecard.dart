@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../functions/constant/appColors.dart';
+import '../../functions/methods/generalfunctions.dart';
 
 
 class ThreeCardsWidget extends StatelessWidget {
@@ -33,7 +34,7 @@ class ThreeCardsWidget extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(icons[index], size: 40, color: Colors.blue),
+                  Icon(icons[index], size: 40, color: getRandomColor()),
                   const SizedBox(height: 10),
                   Text(
                     titles[index],

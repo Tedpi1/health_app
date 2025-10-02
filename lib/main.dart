@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'widgets/sidebar/navigation_provider.dart';
-import 'authpage/login.dart';
+import 'pages/authpage/login.dart';
 
 void main() {
   runApp(

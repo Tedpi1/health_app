@@ -4,8 +4,9 @@ import 'package:health_app/widgets/sidebar/drawer_items.dart';
 import 'package:health_app/widgets/sidebar/navigation_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../authpage/login.dart';
+import '../pages/authpage/login.dart';
 import '../../functions/constant/appColors.dart';
+import '../pages/doctorspage/doctors.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final int role; // 1=Director, 2=Student, 3=Teacher
@@ -14,16 +15,17 @@ class NavigationDrawerWidget extends StatelessWidget {
 
   List<DrawerItem> getRoleItems(int role) {
     switch (role) {
-      case 1:
+      case 1: // Hospital Director / Admin
         return directorItems;
-      case 2:
-        return studentItems;
-      case 3:
-        return teacherItems;
+      case 2: // Doctor
+        return doctorItems;
+      case 3: // Patient
+        return patientItems;
       default:
         return [];
     }
   }
+
 
   final padding = const EdgeInsets.symmetric(horizontal: 20);
 
@@ -97,19 +99,13 @@ class NavigationDrawerWidget extends StatelessWidget {
 
   void selectedItem(BuildContext context, int index) {
     Navigator.of(context).pop();
-    switch (index) {
-      case 0:
-      case 1:
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) =>  Login()),
-        );
-        break;
-      case 2:
-      case 8:
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) =>  Login()),
-        );
-        break;
+    if(role==1){
+      switch(index){
+        case 0:
+          Navigator.push(context, MaterialPageRoute(builder: (_) => DoctorsPage()));
+          break;
+
+      }
     }
   }
 
